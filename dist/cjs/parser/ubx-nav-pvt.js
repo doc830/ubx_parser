@@ -25,7 +25,7 @@ var UBX_NAV_PVT_Parser = /** @class */ (function (_super) {
     }
     UBX_NAV_PVT_Parser.prototype.parse = function (payload) {
         return {
-            Lenght: payload.readUInt32LE(20) + "sm",
+            Lenght: payload.readUInt32LE(20) + "cm",
             // year: payload.readUInt16LE(4),
             // month: payload.readUInt8(6),
             // day: payload.readUInt8(7),
