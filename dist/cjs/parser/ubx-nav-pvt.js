@@ -27,9 +27,9 @@ var UBX_NAV_PVT_Parser = /** @class */ (function (_super) {
         return {
             refStationID: payload.readUInt32LE(2),
             iTOW: payload.readUInt32LE(4),
-            relPosN: payload.readUInt32LE(8),
-            relPosE: payload.readUInt32LE(12),
-            relPosD: payload.readUInt32LE(16),
+            relPosN: payload.readInt32LE(8),
+            relPosE: payload.readInt32LE(12),
+            relPosD: payload.readInt32LE(16),
             relPosLength: payload.readUInt32LE(20),
             relPosHeading: payload.readUInt32LE(24),
             relPosHPN: payload.readUInt32LE(32),
