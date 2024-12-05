@@ -4,12 +4,14 @@ exports.UBXParser = void 0;
 var ubx_esf_meas_1 = require("ubx-parser/dist/cjs/parser/ubx-esf-meas");
 var ubx_esf_status_1 = require("ubx-parser/dist/cjs/parser/ubx-esf-status");
 var ubx_nav_relposned_1 = require("ubx-parser/dist/cjs/parser/ubx-nav-relposned");
+var ubx_nav_pvt_1 = require("ubx-parser/dist/cjs/parser/ubx-nav-pvt");
 var UBXParser = /** @class */ (function () {
     function UBXParser() {
         this.parsers = [];
         this.packetListeners = new Map();
         this.localBuffer = Buffer.from("");
         this.registerParser(new ubx_nav_relposned_1.UBX_NAV_RELPOSNED_Parser());
+        this.registerParser(new ubx_nav_pvt_1.UBX_NAV_PVT_Parser());
         this.registerParser(new ubx_esf_status_1.UBX_ESF_STATUS_Parser());
         this.registerParser(new ubx_esf_meas_1.UBX_ESF_MEAS_Parser());
     }
