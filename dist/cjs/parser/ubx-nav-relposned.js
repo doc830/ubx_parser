@@ -15,15 +15,15 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UBX_NAV_PVT_Parser = void 0;
+exports.UBX_NAV_RELPOSNED_Parser = void 0;
 var Utils_1 = require("ubx-parser/dist/cjs/Utils");
 var PacketParser_1 = require("ubx-parser/dist/cjs/PacketParser");
-var UBX_NAV_PVT_Parser = /** @class */ (function (_super) {
-    __extends(UBX_NAV_PVT_Parser, _super);
-    function UBX_NAV_PVT_Parser() {
+var UBX_NAV_RELPOSNED_Parser = /** @class */ (function (_super) {
+    __extends(UBX_NAV_RELPOSNED_Parser, _super);
+    function UBX_NAV_RELPOSNED_Parser() {
         return _super.call(this, 0x01, 0x3c) || this;
     }
-    UBX_NAV_PVT_Parser.prototype.parse = function (payload) {
+    UBX_NAV_RELPOSNED_Parser.prototype.parse = function (payload) {
         return {
             refStationID: payload.readUInt32LE(2),
             iTOW: payload.readUInt32LE(4),
@@ -91,6 +91,6 @@ var UBX_NAV_PVT_Parser = /** @class */ (function (_super) {
             // magAcc: payload.readUInt16LE(90) * 1e-2,
         };
     };
-    return UBX_NAV_PVT_Parser;
+    return UBX_NAV_RELPOSNED_Parser;
 }(PacketParser_1.PacketParser));
-exports.UBX_NAV_PVT_Parser = UBX_NAV_PVT_Parser;
+exports.UBX_NAV_RELPOSNED_Parser = UBX_NAV_RELPOSNED_Parser;
