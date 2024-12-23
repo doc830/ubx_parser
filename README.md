@@ -1,2 +1,2 @@
 # ubx_parser
- A parser for the GNSS protocol UBX.
+ A parser for the GPS protocol UBX.
