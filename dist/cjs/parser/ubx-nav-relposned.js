@@ -31,7 +31,7 @@ var UBX_NAV_RELPOSNED_Parser = /** @class */ (function (_super) {
             relPosE: payload.readInt32LE(12),
             relPosD: payload.readInt32LE(16),
             relPosLength: payload.readInt32LE(20),
-            relPosHeading: payload.readUInt32LE(24)*1e-5,
+            relPosHeading: payload.readInt32LE(24)*1e-5,
             relPosHPN: payload.readInt8LE(32)*0.1,
             relPosHPE: payload.readInt8LE(33)*0.1,
             relPosHPD: payload.readInt8LE(34)*0.1,
