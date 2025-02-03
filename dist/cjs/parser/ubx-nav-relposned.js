@@ -25,7 +25,7 @@ var UBX_NAV_RELPOSNED_Parser = /** @class */ (function (_super) {
     }
     UBX_NAV_RELPOSNED_Parser.prototype.parse = function (payload) {
         return {
-            refStationID: payload.readUInt16LE(2),
+            refStationID: payload.readUInt32LE(2),
             iTOW: payload.readUInt32LE(4),
             relPosN: payload.readInt32LE(8),
             relPosE: payload.readInt32LE(12),
