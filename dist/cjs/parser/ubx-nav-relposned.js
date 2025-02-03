@@ -46,7 +46,7 @@ var UBX_NAV_RELPOSNED_Parser = /** @class */ (function (_super) {
             relPosValid: (0, Utils_1.readBitFromUInt8)(payload.readUInt8(60), 2) == 1,
             carrSoln: (0, Utils_1.readBitFromUInt8)(payload.readUInt8(60), 3, 2),
             isMoving: (0, Utils_1.readBitFromUInt8)(payload.readUInt8(60), 5) == 1,
-            relPosHeadingValid: (0, Utils_1.readBitFromUInt8)(payload.readUInt8(60), 8) == 1,
+            relPosHeadingValid: (0, Utils_1.readBitFromUInt16)(payload.readUInt8(60), 8) == 1,
             relPosHeadingNormalized: (0, Utils_1.readBitFromUInt16)(payload.readUInt8(60), 9) == 1,
             //iTOW: payload.readUInt32LE(0),
             // year: payload.readUInt16LE(4),
