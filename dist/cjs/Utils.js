@@ -1,12 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.readBitFromUInt32 = exports.readBitFromUInt16 = exports.readBitFromUInt8 = void 0;
-function readBitFromUInt8(byte, offset, length) {
-    if (offset === void 0) { offset = 0; }
-    if (length === void 0) { length = 1; }
-    var mask = 0xff >> (8 - length);
-    var bit_offset = mask << offset;
-    return (byte & bit_offset) >> offset;
+function readBitFromUInt8(byte, offset = 0, length = 1) {
+    var mask = (1 << length) - 1;
+    return (byte >> offset) & mask;
 }
 exports.readBitFromUInt8 = readBitFromUInt8;
 function readBitFromUInt16(byte, offset, length) {
